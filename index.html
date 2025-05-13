@@ -47,86 +47,159 @@
       line-height: 1.6;
       margin: 10px 0;
     }
-    .copy-code {
-      margin-top: 40px;
-      display: inline-flex;
-      align-items: center;
-      padding: 10px 20px;
-      background-color: #eee;
-      color: #333;
+
+    .info-card {
+      background-color: #FFF8E1;
+      border: 1px solid #FFEB3B;
+      border-left: 5px solid #FBC02D;
       border-radius: 8px;
+      padding: 16px;
+      margin-top: 20px;
+      color: #5D4037;
       cursor: pointer;
-      font-weight: 500;
       transition: background-color 0.3s;
     }
-    .copy-code:hover {
-      background-color: #ddd;
+
+    .info-card:hover {
+      background-color: #FFF3CD;
     }
-    .copy-code i {
-      margin-right: 8px;
-      color: #4A148C;
+
+    .info-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
     }
-    .toast {
-      visibility: hidden;
-      opacity: 0;
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #4A148C;
-      color: #fff;
-      padding: 12px 24px;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+
+    .info-card i.icon-left {
+      font-size: 20px;
+      margin-right: 12px;
+      color: #FBC02D;
+      margin-top: 3px;
+    }
+
+    .info-card .icon-toggle {
+      font-size: 18px;
+      color: #FBC02D;
+      margin-left: 12px;
+      transition: transform 0.3s;
+    }
+
+    .info-card.expanded .icon-toggle {
+      transform: rotate(180deg);
+    }
+
+    .info-content {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      transition: all 0.3s ease;
+      margin-top: 10px;
       font-size: 15px;
-      transition: opacity 0.4s ease;
+      line-height: 1.5;
+      color: #5D4037;
     }
-    .toast.show {
-      visibility: visible;
-      opacity: 1;
+
+    .info-card.expanded .info-content {
+      white-space: normal;
+      text-overflow: unset;
     }
   </style>
 </head>
 <body>
-	
   <div class="container">
-        <div class="header">
-            <i class="fas fa-file-alt"></i>
-            <span>Termos e Condições</span>
+    <div class="header">
+      <i class="fas fa-file-alt"></i>
+      <span>Termos e Condições</span>
+    </div>
+    <div class="content">
+
+      <p>Ao adquirir e/ou utilizar um Gift Card, você concorda com os seguintes termos e condições:</p>
+
+      <h2>1. Prazos de Entrega</h2>  
+
+      <p>O atendimento é realizado de segunda a sábado, das 9h às 18h, exceto em feriados.</p>  
+      <p>Pedidos efetuados <b>dentro do horário comercial</b> serão processados em até <b>2 (duas) horas</b>. Em períodos de alta demanda, esse prazo poderá se estender para até <b>24 (vinte e quatro) horas</b>.</p>  
+      <p>Pedidos realizados <b>fora do horário comercial</b> serão processados no <b>primeiro dia útil subsequente</b>.</p>  
+      <div class="info-card" onclick="toggleInfoCard(this)">
+        <div class="info-card-header">
+          <div style="display: flex; align-items: flex-start;">
+            <i class="fas fa-info-circle icon-left"></i>
+            <strong>Importante</strong>
+          </div>
+          <i class="fas fa-chevron-down icon-toggle"></i>
         </div>
-        <div class="content">
+        <div class="info-content">
+          Após o envio do comprovante, evite mensagens adicionais, pois elas podem interferir na ordem de atendimento e ocasionar atrasos.
+        </div>
+      </div>
 
-    <p>Ao adquirir e/ou utilizar um Gift Card, você concorda com os seguintes termos e condições:</p>
+      <h2>1.1 Envio de Comprovante e Liberação do Produto</h2>
 
-    <h2>1. Prazos de Entrega</h2>  
-    <p>Ao finalizar a compra, o cliente declara estar ciente e de acordo que o prazo para recebimento do Gift Card poderá variar conforme a demanda da loja.<p>
-    <p>O atendimento ocorre de segunda a sábado, das 09h às 18h, exceto em feriados.</p>  
-    <p>Pedidos efetuados <b>dentro do horário comercial</b> serão processados em até <b>2 (duas) horas</b>. Em situações excepcionais de alta demanda, esse prazo poderá ser estendido para até <b>24 (vinte e quatro) horas</b>.</p>  
-    <p>Pedidos realizados <b>fora do horário comercial</b> serão processados no <b>primeiro dia útil subsequente</b></p>  
+      <p>Após a confirmação da compra, o cliente deverá <b>enviar o comprovante de pagamento imediatamente</b> pelos canais informados (WhatsApp, e-mail ou outro canal especificado no momento da compra).</p>
+      <p>A <b>liberação do Gift Card</b> ou código digital ocorrerá somente após a confirmação do pagamento, mediante o envio imediato do comprovante.</p>
 
-    <h2>2. Uso do Gift Card</h2>
-    <p>O Gift Card é válido exclusivamente para a aquisição de produtos e/ou serviços na plataforma especificada no momento da compra.</p>
-    <p>O Gift Card é de uso pessoal e intransferível. Não pode ser convertido em dinheiro nem transferido para outra conta ou usuário.</p>
-    <p>O Gift Card deve ser resgatado apenas em contas registradas no Brasil. Ele não é válido nem utilizável em outros países.</p>
+      <div class="info-card" onclick="toggleInfoCard(this)">
+        <div class="info-card-header">
+          <div style="display: flex; align-items: flex-start;">
+            <i class="fas fa-info-circle icon-left"></i>
+            <strong>Importante</strong>
+          </div>
+          <i class="fas fa-chevron-down icon-toggle"></i>
+        </div>
+        <div class="info-content">
+          O prazo para recebimento do produto passa a ser contado a partir da confirmação do pagamento, realizada exclusivamente <b>após o recebimento do comprovante via WhatsApp.</b>
+        </div>
+      </div>
 
-    <h2>3. Validade</h2>
-    <p>A validade do Gift Card é determinada exclusivamente pela plataforma na qual será utilizado, conforme seus próprios termos e condições. A loja não possui autonomia para definir ou alterar esse prazo.<p>
-    <p>Para mais informações sobre a validade do produto, o cliente poderá entrar em contato com o suporte da plataforma correspondente ou com o atendimento da loja, que prestará os esclarecimentos necessários quanto ao prazo de utilização.</p>  
+      <p>Compras cujo comprovante seja enviado com atraso superior a <b>24 horas</b> da data do pagamento <b>poderão não ser processadas</b>, sendo inviável a garantia de entrega do produto ou reembolso do valor.</p>
+      <p>Gift Cards são produtos digitais de uso irreversível. Por isso, é de inteira responsabilidade do cliente o envio correto e no prazo informado do comprovante, a fim de garantir o atendimento.</p>
 
-    <h2>4. Políticas de Reembolso</h2>
-    <p>Após a confirmação da compra, não serão realizados cancelamentos, trocas ou reembolsos, sob qualquer circunstância.</p>
-    <p>Não nos responsabilizamos por perdas, extravios, uso indevido ou informações incorretas fornecidas pelo cliente no ato da compra.</p>
+      <h2>2. Uso do Gift Card</h2>
+      <p>O Gift Card é válido exclusivamente para a aquisição de produtos e/ou serviços na plataforma especificada no momento da compra.</p>
+      <p>O Gift Card é de uso pessoal e intransferível. Não pode ser convertido em dinheiro nem transferido para outra conta ou usuário.</p>
+      <p>O Gift Card deve ser resgatado apenas em contas registradas no Brasil. Ele não é válido nem utilizável em outros países.</p>
 
-    <h2>5. Isenção de Responsabilidade</h2>
-    <p>A ativação, funcionalidade e validade do Gift Card são de responsabilidade da plataforma. Para problemas técnicos ou falhas na ativação, o suporte deve ser solicitado diretamente à respectiva plataforma.</p>
-    <p>Não nos responsabilizamos por compras realizadas com dados incorretos ou incompletos fornecidos pelo cliente.</p>
-    <p>O uso do Gift Card está sujeito às regras e políticas da plataforma de destino.</p>
+      <h2>3. Validade</h2>
+      <p>A validade do Gift Card é determinada exclusivamente pela plataforma na qual será utilizado, conforme seus próprios termos e condições. A loja não tem autonomia para definir ou modificar esse prazo.</p>
+      <p>Para mais informações sobre a validade do produto, o cliente poderá entrar em contato com o suporte da plataforma correspondente ou com o atendimento da loja, que prestará os esclarecimentos necessários quanto ao prazo de utilização.</p>  
 
-     <h2>6. Notificações automáticas</h2>
-     <p>Ao adquirir um produto na loja, o cliente autoriza o envio de notificações periódicas relacionadas à validade ou renovação de assinaturas adquiridas por meio de Gift Cards, por e-mail, WhatsApp ou outros meios informados no momento da compra.</p>
-     <p>O cliente poderá, a qualquer momento, solicitar o cancelamento dessas notificações através de nossos canais de atendimento.</p>
- 
-   <h2>7. Fraudes</h2>
-    <p>A prática de qualquer atividade ilegal envolvendo o uso do Gift Card poderá resultar em sanções legais e bloqueio definitivo da conta.</p>
+      <h2>4. Políticas de Reembolso</h2>
+      <p>Após a confirmação da compra, não serão realizados cancelamentos, trocas ou reembolsos, sob qualquer circunstância.</p>
+      <p>Não nos responsabilizamos por perdas, extravios, uso indevido ou dados incorretos informados pelo cliente no momento da compra.</p>
+
+      <h2>5. Isenção de Responsabilidade</h2>
+      <p>A ativação, funcionalidade e validade do Gift Card são de responsabilidade da plataforma. Para problemas técnicos ou falhas na ativação, o suporte deve ser solicitado diretamente à respectiva plataforma.</p>
+      <p>Não nos responsabilizamos por compras realizadas com dados incorretos ou incompletos fornecidos pelo cliente.</p>
+
+      <div class="info-card" onclick="toggleInfoCard(this)">
+        <div class="info-card-header">
+          <div style="display: flex; align-items: flex-start;">
+            <i class="fas fa-info-circle icon-left"></i>
+            <strong>Importante</strong>
+          </div>
+          <i class="fas fa-chevron-down icon-toggle"></i>
+        </div>
+        <div class="info-content">
+          Informamos que não nos responsabilizamos por perda de informações decorrente do uso do modo temporário de mensagens por parte do cliente, uma vez que esse recurso apaga automaticamente o conteúdo para ambas as partes. Recomendamos a desativação do modo temporário durante o atendimento.
+        </div>
+      </div>
+
+      <p>O uso do Gift Card está sujeito às regras e políticas da plataforma de destino.</p>
+
+      <h2>6. Notificações automáticas</h2>
+      <p>Ao adquirir um produto na loja, o cliente autoriza o envio de notificações periódicas relacionadas à validade ou renovação de assinaturas adquiridas por meio de Gift Cards, por e-mail, WhatsApp ou outros meios informados no momento da compra.</p>
+      <p>O cliente poderá, a qualquer momento, solicitar o cancelamento dessas notificações através de nossos canais de atendimento.</p>
+
+      <h2>7. Fraudes</h2>
+      <p>A prática de qualquer atividade ilegal envolvendo o uso do Gift Card poderá resultar em sanções legais e bloqueio definitivo da conta.</p>
+
+    </div>
+  </div>
+
+  <script>
+    function toggleInfoCard(card) {
+      card.classList.toggle('expanded');
+    }
+  </script>
 </body>
 </html>
